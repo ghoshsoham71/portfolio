@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Linkedin, MapPin } from "lucide-react";
+import TypingText from "./TextAnimation";
 
 const Contact = () => {
   return (
@@ -8,20 +9,18 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-black mb-6">
-              Let's Work Together
+            <h2 className="text-4xl md:text-5xl font-black mb-9">
+              <TypingText text="Let's Work Together" />
             </h2>
-            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Open to DevOps engineering roles and technical collaborations. 
-              Ready to build something amazing.
-            </p>
 
             {/* Contact Card */}
-            <Card className="spotify-glow bg-card/50 border-border/50 mb-8">
+            <Card className="spotify-glow bg-card/50 border-border/50 mb-8 ">
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-3 gap-6">
                   <a
-                    href="mailto:ghoshsoham71@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=ghoshsoham71@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex flex-col items-center gap-3 p-6 rounded-lg hover:bg-muted/50 transition-colors group"
                   >
                     <Mail className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
@@ -40,11 +39,11 @@ const Contact = () => {
                     <Linkedin className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
                     <div>
                       <h3 className="font-semibold mb-1">LinkedIn</h3>
-                      <p className="text-sm text-muted-foreground">Professional Profile</p>
+                      <p className="text-sm text-muted-foreground">Soham Ghosh</p>
                     </div>
                   </a>
 
-                  <div className="flex flex-col items-center gap-3 p-6 rounded-lg">
+                  <div className="flex flex-col items-center gap-3 p-6 rounded-lg hover:bg-muted/50 transition-colors group">
                     <MapPin className="w-8 h-8 text-primary" />
                     <div>
                       <h3 className="font-semibold mb-1">Location</h3>
@@ -55,14 +54,6 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* CTA Button */}
-            <Button 
-              size="lg" 
-              className="spotify-glow bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 rounded-full"
-              onClick={() => window.location.href = 'mailto:ghoshsoham71@gmail.com'}
-            >
-              Get In Touch
-            </Button>
           </div>
         </div>
       </div>

@@ -33,16 +33,16 @@ const Hero = () => {
       {/* Minimal background gradient */}
       <div className="absolute inset-0 bg-gradient-dark" />
 
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 text-center pt-8">
         <div className="animate-fade-in max-w-4xl mx-auto">
 
           <div>
-            <h1 className="text-[100px] text-white italic font-[UnifrakturCook]">
+            <h1 className="text-[90px] font-iceland text-white">
               <TypingText text="Soham Ghosh" />
             </h1>
           </div>
 
-          <p className="text-[18px] text-white italic font-[UnifrakturCook] pb-6 text-opacity-70">        
+          <p className="text-[18px] font-audiowide text-white pb-6 text-opacity-50">        
            Tech enthusiast dedicated to crafting impactful software solutions
           </p>
 
@@ -52,7 +52,6 @@ const Hero = () => {
             onClick={handleClick}
             disabled={downloaded}  // optional: disables after download
           >
-            <Play className="w-6 h-6 mr-3 fill-current" />
             Download my Resume
           </Button>
 
@@ -88,10 +87,11 @@ const Hero = () => {
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <ChevronDown
-            className="w-6 h-6 text-muted-foreground cursor-pointer hover:text-primary transition-colors"
+            className="w-6 h-6 text-muted-foreground cursor-pointer hover:text-primary transition-colors "
             onClick={() => scrollToSection('about')}
           />
         </div>
+        
       </div>
     </section>
   );

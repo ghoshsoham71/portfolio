@@ -124,3 +124,14 @@
     transform: translateY(0);
   }
 }
+
+body, html, #root {
+  font-family: 'Electrolize';
+}
+
+.audiowide {
+  font-family: 'Audiowide';
+}
+.iceland-regular {
+  font-family: "Iceland";
+}

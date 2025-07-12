@@ -41,23 +41,21 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4">
             {navItems.map((item) => (
-              <button
+              <Button 
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold text-sm px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {item.label}
-              </button>
+              </Button>
             ))}
           </div>
 
           {/* Mobile Menu Toggle */}
           <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
+            className="md:hidden bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold rounded-full p-2 transition-all duration-300 shadow-lg hover:shadow-xl"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -69,22 +67,14 @@ const Navigation = () => {
           <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 animate-fade-in">
             <div className="container mx-auto px-4 py-4 space-y-4">
               {navItems.map((item) => (
-                <button
+                <Button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
+                  className="w-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold text-sm py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   {item.label}
-                </button>
+                </Button>
               ))}
-              
-              <Button 
-                size="sm" 
-                className="w-full bg-primary hover:bg-primary/90 rounded-full"
-                onClick={() => scrollToSection('#contact')}
-              >
-                Contact
-              </Button>
             </div>
           </div>
         )}

@@ -57,7 +57,9 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif']
+				electrolize: ["Electrolize"],
+				audiowide: ['Audiowide'],
+				iceland: ['Iceland']
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
