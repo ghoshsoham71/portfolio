@@ -37,7 +37,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="font-black text-xl gradient-text">
-            SG
+            
           </div>
 
           {/* Desktop Navigation */}
@@ -51,14 +51,6 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            
-            <Button 
-              size="sm" 
-              className="bg-primary hover:bg-primary/90 rounded-full"
-              onClick={() => scrollToSection('#contact')}
-            >
-              Contact
-            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
