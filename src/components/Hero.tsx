@@ -4,6 +4,7 @@ import { ChevronDown, Github, Linkedin, Mail, Play } from "lucide-react";
 import TypingText from "./TextAnimation";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPython } from '@fortawesome/free-brands-svg-icons';
+import StreamingIcons from "./StreamingIcons";
 
 const Hero = () => {
   const [downloaded, setDownloaded] = useState(false);
@@ -36,7 +37,7 @@ const Hero = () => {
         <div className="animate-fade-in max-w-4xl mx-auto">
 
           <div>
-            <h1 className="text-[125px] text-white italic font-[UnifrakturCook]">
+            <h1 className="text-[100px] text-white italic font-[UnifrakturCook]">
               <TypingText text="Soham Ghosh" />
             </h1>
           </div>
@@ -54,6 +55,10 @@ const Hero = () => {
             <Play className="w-6 h-6 mr-3 fill-current" />
             Download my Resume
           </Button>
+
+          <div className="relative w-full h-40 text-white p-6 mask-fade-horizontal">
+          <StreamingIcons />
+          </div>
 
           {/* <div className="flex justify-center gap-8">
             <a
