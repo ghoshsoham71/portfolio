@@ -59,7 +59,9 @@ export default {
 			fontFamily: {
 				electrolize: ["Electrolize"],
 				audiowide: ['Audiowide'],
-				iceland: ['Iceland']
+				iceland: ['Iceland'],
+				funnel: ['Funnel Display'],
+				grotesk: ['Space Grotesk'],
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',

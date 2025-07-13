@@ -31,24 +31,24 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       {/* Minimal background gradient */}
-      <div className="absolute inset-0 bg-gradient-dark" />
+      <div className="" />
 
       <div className="relative z-10 container mx-auto px-4 text-center pt-8">
         <div className="animate-fade-in max-w-4xl mx-auto">
 
           <div>
-            <h1 className="text-[90px] font-iceland text-white">
+            <h1 className="text-[70px] font-funnel !text-white">
               <TypingText text="Soham Ghosh" />
             </h1>
           </div>
 
-          <p className="text-[18px] font-audiowide text-white pb-6 text-opacity-50">        
+          <p className="text-[18px] font-grotesk text-white pb-6 text-opacity-50">        
            Tech enthusiast dedicated to crafting impactful software solutions
           </p>
 
           <Button
             size="lg"
-            className="spotify-glow bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 rounded-full mb-16"
+            className="spotify-glow bg-primary hover:bg-primary/50 text-primary-foreground font-bold text-lg px-6 py-4 rounded-full mb-16"
             onClick={handleClick}
             disabled={downloaded}  // optional: disables after download
           >
@@ -85,13 +85,13 @@ const Hero = () => {
           </div> */}
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <ChevronDown
             className="w-6 h-6 text-muted-foreground cursor-pointer hover:text-primary transition-colors "
             onClick={() => scrollToSection('about')}
           />
         </div>
-        
+         */}
       </div>
     </section>
   );

@@ -6,82 +6,108 @@
 
 @layer base {
   :root {
-    --background: 0 0% 6%;
-    --foreground: 0 0% 98%;
+    /* Dark-first theme with rich green-to-black gradients */
+    --background: 0 0% 7%; /* #121212 - Original dark background */
+    --foreground: 0 0% 100%; /* #ffffff - Original white text */
 
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 98%;
+    --card: 120 15% 8%; /* Dark green-black card background */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 120 20% 6%; /* Even darker green-black for popovers */
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 141 76% 48%;
-    --primary-foreground: 0 0% 6%;
-    --primary-glow: 141 76% 60%;
+    --primary: 122 100% 76%; /* #8aff8e - Bright green for components */
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 122 100% 80%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 97 100% 19%; /* #1b6100 - Rich dark green */
+    --secondary-foreground: 122 100% 76%; /* Bright green text on dark green */
+    --secondary-glow: 97 100% 35%;
 
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 127 85% 43%; /* #20c536 - Medium green accent */
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 127 85% 60%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 120 10% 15%; /* Dark green-tinted muted */
+    --muted-foreground: 120 20% 70%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 141 76% 48%;
+    --border: 120 15% 20%; /* Green-tinted borders */
+    --input: 120 20% 12%; /* Dark green input backgrounds */
+    --ring: 122 100% 76%; /* Bright green focus rings */
 
     --radius: 0.75rem;
 
-    /* Spotify-inspired gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(141 76% 48%), hsl(141 76% 60%));
-    --gradient-dark: linear-gradient(180deg, hsl(0 0% 6%), hsl(0 0% 3%));
+    /* Rich green-to-black gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(122 100% 76%), hsl(127 85% 43%));
+    --gradient-dark: linear-gradient(180deg, hsl(120 15% 8%), hsl(0 0% 0%));
+    --gradient-card: linear-gradient(135deg, hsl(120 20% 6%), hsl(120 15% 8%));
+    --gradient-secondary: linear-gradient(135deg, hsl(97 100% 19%), hsl(120 50% 5%));
+    --gradient-accent: linear-gradient(135deg, hsl(127 85% 43%), hsl(122 100% 76%));
     
-    /* Minimal effects */
-    --glow-primary: 0 0 30px hsl(141 76% 48% / 0.3);
+    /* Enhanced effects with green undertones */
+    --glow-primary: 0 0 40px hsl(122 100% 76% / 0.4);
+    --glow-secondary: 0 0 30px hsl(97 100% 19% / 0.3);
+    --glow-accent: 0 0 35px hsl(127 85% 43% / 0.35);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar with green undertones */
+    --sidebar-background: 120 15% 8%;
+    --sidebar-foreground: 122 100% 76%;
+    --sidebar-primary: 97 100% 19%;
+    --sidebar-primary-foreground: 122 100% 76%;
+    --sidebar-accent: 120 20% 12%;
+    --sidebar-accent-foreground: 127 85% 43%;
+    --sidebar-border: 120 15% 20%;
+    --sidebar-ring: 122 100% 76%;
   }
 
   .dark {
-    --background: 0 0% 6%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 141 76% 48%;
-    --primary-foreground: 0 0% 6%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 0 0% 20%;
-    --accent-foreground: 0 0% 98%;
+    /* Keep original dark theme values intact */
+    --background: 0 0% 7%; /* #121212 */
+    --foreground: 0 0% 100%; /* #ffffff */
+
+    --card: 120 15% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 120 20% 6%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 122 100% 76%; /* #8aff8e - Bright green components */
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 122 100% 80%;
+
+    --secondary: 97 100% 19%; /* #1b6100 - Rich dark green */
+    --secondary-foreground: 122 100% 76%;
+    --secondary-glow: 97 100% 35%;
+
+    --accent: 127 85% 43%; /* #20c536 - Medium green accent */
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 127 85% 60%;
+
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 20% 70%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
-    --ring: 141 76% 48%;
+
+    --border: 120 15% 20%;
+    --input: 120 20% 12%;
+    --ring: 122 100% 76%;
+
+    /* Enhanced gradient system */
+    --gradient-primary: linear-gradient(135deg, hsl(122 100% 76%), hsl(127 85% 43%));
+    --gradient-dark: linear-gradient(180deg, hsl(120 15% 8%), hsl(0 0% 0%));
+    --gradient-card: linear-gradient(135deg, hsl(120 20% 6%), hsl(120 15% 8%));
+    --gradient-secondary: linear-gradient(135deg, hsl(97 100% 19%), hsl(120 50% 5%));
+    --gradient-accent: linear-gradient(135deg, hsl(127 85% 43%), hsl(122 100% 76%));
+    
+    /* Enhanced glow effects */
+    --glow-primary: 0 0 40px hsl(122 100% 76% / 0.4);
+    --glow-secondary: 0 0 30px hsl(97 100% 19% / 0.3);
+    --glow-accent: 0 0 35px hsl(127 85% 43% / 0.35);
   }
 }
 
@@ -134,4 +160,12 @@ body, html, #root {
 }
 .iceland-regular {
   font-family: "Iceland";
+}
+.heading-funnel {
+  font-family: 'Funnel Display';
+  font-weight: 800; 
+}
+.space-grotesk {
+  font-family: "Space Grotesk";
+  font-optical-sizing: auto;
 }

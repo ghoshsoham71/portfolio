@@ -9,7 +9,7 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-black mb-9">
+            <h2 className="font-funnel text-2xl md:text-3xl font-black mb-9">
               <TypingText text="Let's Work Together" />
             </h2>
 
@@ -21,12 +21,15 @@ const Contact = () => {
                     href="https://mail.google.com/mail/?view=cm&fs=1&to=ghoshsoham71@gmail.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-3 p-6 rounded-lg hover:bg-muted/50 transition-colors group"
+                    className="flex flex-col items-center gap-3 p-6 rounded-lg hover:bg-muted/50 transition-colors group w-full"
                   >
-                    <Mail className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
-                    <div>
-                      <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-sm text-muted-foreground">ghoshsoham71@gmail.com</p>
+                    <Mail className="w-8 h-8 text-primary group-hover:scale-110 transition-transform shrink-0" />
+
+                    <div className="text-center break-words">
+                      <h3 className="font-funnel font-semibold mb-1">Email</h3>
+                      <p className="font-funnel text-sm text-muted-foreground break-words">
+                        ghoshsoham71@gmail.com
+                      </p>
                     </div>
                   </a>
 
@@ -38,16 +41,16 @@ const Contact = () => {
                   >
                     <Linkedin className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
                     <div>
-                      <h3 className="font-semibold mb-1">LinkedIn</h3>
-                      <p className="text-sm text-muted-foreground">Soham Ghosh</p>
+                      <h3 className="font-funnel font-semibold mb-1">LinkedIn</h3>
+                      <p className="font-funnel text-sm text-muted-foreground">Soham Ghosh</p>
                     </div>
                   </a>
 
                   <div className="flex flex-col items-center gap-3 p-6 rounded-lg hover:bg-muted/50 transition-colors group">
                     <MapPin className="w-8 h-8 text-primary" />
                     <div>
-                      <h3 className="font-semibold mb-1">Location</h3>
-                      <p className="text-sm text-muted-foreground">Kolkata, India</p>
+                      <h3 className="font-funnelfont-semibold mb-1">Location</h3>
+                      <p className="font-funnel text-sm text-muted-foreground">Kolkata, India</p>
                     </div>
                   </div>
                 </div>
