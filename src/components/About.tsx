@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import TypingText from "./TextAnimation";
 
 const About = () => {
   return (
@@ -9,24 +10,29 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left Column */}
             <div className="animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-black mb-6">
-                Systems Engineer
+              <h2 className="text-4xl md:text-3xl font-black mb-6">
+                <TypingText text={"About me"}></TypingText>
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Specialized in DevOps automation and cloud infrastructure. 
-                Currently at Tata Consultancy Services, building scalable solutions 
-                with modern technologies.
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">           
+                Hey, I’m Soham. I’m all about creating smart solutions that make life easier and work smoother. 
+                I enjoy tackling challenges, learning new things, and bringing ideas to life. 
+                When I’m not working, you’ll probably find me exploring new interests... or pushing a commit named ‘Final_fix_temp2’.
               </p>
               
-              <div className="space-y-4">
+              <div className="space-y-2">
                 <div>
-                  <h3 className="text-primary font-semibold mb-2">Current Role</h3>
-                  <p className="text-muted-foreground">Systems Engineer at TCS</p>
+                  <h3 className="text-primary font-semibold mb-1">Current Role</h3>
+                  <p className="text-muted-foreground">Software Engineer at TCS-AI Cloud</p>
+                </div>
+                <div>
+                  <h3 className="text-primary font-semibold mb-1">Previous Experience</h3>
+                  <p className="text-muted-foreground">DevOps Intern at Nokia Solutions and Networks</p>
                 </div>
                 
+                
                 <div>
-                  <h3 className="text-primary font-semibold mb-2">Education</h3>
-                  <p className="text-muted-foreground">B.Tech from KIIT Bhubaneswar • CGPA: 9.19</p>
+                  <h3 className="text-primary font-semibold mb-1">Education</h3>
+                  <p className="text-muted-foreground">B.Tech in CSE from KIIT, Bhubaneswar</p>
                 </div>
               </div>
             </div>
@@ -39,9 +45,9 @@ const About = () => {
                   
                   <div className="space-y-6">
                     <div>
-                      <h4 className="text-primary font-semibold mb-3">DevOps & Cloud</h4>
+                      <h4 className="text-primary font-semibold mb-3">Languages & Databases:</h4>
                       <div className="flex flex-wrap gap-2">
-                        {['AWS', 'Docker', 'Kubernetes', 'Jenkins', 'Terraform'].map((skill) => (
+                        {['Java', 'Python', 'Shell Script', 'PostgreSQL', 'Neo4j', 'MongoDB', 'FastAPI'].map((skill) => (
                           <Badge key={skill} variant="secondary" className="bg-muted">
                             {skill}
                           </Badge>
@@ -50,9 +56,20 @@ const About = () => {
                     </div>
                     
                     <div>
-                      <h4 className="text-primary font-semibold mb-3">Programming</h4>
+                      <h4 className="text-primary font-semibold mb-3">DevOps & Cloud Technologies:</h4>
                       <div className="flex flex-wrap gap-2">
-                        {['Python', 'Java', 'PostgreSQL', 'FastAPI'].map((skill) => (
+                        {['Git', 'Docker', 'Jenkins', 'Ansible', 'AWS'].map((skill) => (
+                          <Badge key={skill} variant="secondary" className="bg-muted">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-primary font-semibold mb-3">AI & Machine Learning:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {['LangChain', 'ChromaDB', 'PyTorch', 'LangGraph'].map((skill) => (
                           <Badge key={skill} variant="secondary" className="bg-muted">
                             {skill}
                           </Badge>
