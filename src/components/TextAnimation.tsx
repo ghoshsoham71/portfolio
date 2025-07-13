@@ -39,7 +39,7 @@ const TypingText: React.FC<TypingTextProps> = ({
   }, [index, text, speed, trigger, onComplete]);
 
   return (
-    <span className="bg-gradient-to-b from-green-700 to-green-200 bg-clip-text text-transparent">
+    <span className="bg-gradient-to-b from-green-400 to-green-100 bg-clip-text text-transparent">
       {displayedText}
       {!isComplete && (
         <span className="ml-1 animate-blink text-muted-foreground">|</span>

@@ -13,7 +13,7 @@ const About = () => {
               <h2 className="text-4xl md:text-3xl font-black font-funnel mb-6">
                 <TypingText text={"About me"}></TypingText>
               </h2>
-              <p className="text-white opacity-85 text-lg text-muted-foreground mb-8 leading-relaxed font-grotesk">           
+              <p className="text-[15px] text-white opacity-85 text-lg text-muted-foreground mb-8 leading-relaxed font-grotesk">           
                 Hey, I’m Soham. I’m all about creating smart solutions that make life easier and work smoother. 
                 I enjoy tackling challenges, learning new things, and bringing ideas to life. 
                 When I’m not working, you’ll probably find me exploring new interests... or pushing a commit named ‘Final_fix_temp2’.
@@ -22,17 +22,17 @@ const About = () => {
               <div className="space-y-2">
                 <div>
                   <h3 className="text-primary font-semibold mb-1 font-funnel">Current Role</h3>
-                  <p className="text-white opacity-85 text-muted-foreground font-grotesk">Software Engineer at TCS-AI Cloud</p>
+                  <p className="text-[15px] text-white opacity-85 text-muted-foreground font-grotesk">Software Engineer at TCS-AI Cloud</p>
                 </div>
                 <div>
                   <h3 className="text-primary font-semibold mb-1 font-funnel">Previous Experience</h3>
-                  <p className="text-white opacity-85 text-muted-foreground font-grotesk">DevOps Intern at Nokia Solutions and Networks</p>
+                  <p className="text-[15px] text-white opacity-85 text-muted-foreground font-grotesk">DevOps Intern at Nokia Solutions and Networks</p>
                 </div>
                 
                 
                 <div>
                   <h3 className="text-primary font-semibold mb-1 font-funnel">Education</h3>
-                  <p className="text-white opacity-85 text-muted-foreground font-grotesk">B.Tech in CSE from KIIT, Bhubaneswar</p>
+                  <p className="text-[15px] text-white opacity-85 text-muted-foreground font-grotesk">B.Tech in CSE from KIIT, Bhubaneswar</p>
                 </div>
               </div>
             </div>
