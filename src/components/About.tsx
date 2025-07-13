@@ -39,7 +39,7 @@ const About = () => {
 
             {/* Right Column - Skills */}
             <div className="animate-fade-in">
-              <Card className="bg-card/50 border-border/50">
+              <Card className="spotify-glow bg-card/50 border-border/50">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-bold mb-6">Core Skills</h3>
                   
