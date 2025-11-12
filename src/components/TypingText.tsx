@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 
-const TypingText = ({ text, speed = 50, onComplete }) => {
+const TypingText = ({ text, speed = 30, onComplete, className = "" }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    setDisplayedText("");
+    setIndex(0);
+  }, [text]);
 
   useEffect(() => {
     if (index < text.length) {
@@ -16,6 +21,7 @@ const TypingText = ({ text, speed = 50, onComplete }) => {
     }
   }, [index, text, speed, onComplete]);
 
-  return <>{displayedText}</>;
+  return <span className={className}>{displayedText}<span className="animate-blink">_</span></span>;
 };
+
 export default TypingText;

@@ -2,82 +2,87 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Navigation = ({ activeTab, setActiveTab }) => {
+  const [time, setTime] = useState(new Date());
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
   }, []);
 
-  const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' }
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'F1') {
+        e.preventDefault();
+        window.open('https://github.com', '_blank');
+      } else if (e.key === 'F2') {
+        e.preventDefault();
+        window.open('https://www.linkedin.com/in/ghoshsoham71/', '_blank');
+      } else if (e.key === 'F3') {
+        e.preventDefault();<a></a>
+        window.open('https://mail.google.com/mail/?view=cm&fs=1&to=ghoshsoham71@gmail.com');
+      } 
+       else if (e.key === 'F5') {
+        e.preventDefault();
+        setActiveTab('projects');
+      } else if (e.key === 'F4') {
+        e.preventDefault();
+        setActiveTab('home');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [setActiveTab]);
+
+  const tabs = [
+    { id: 'home', label: 'HOME.BAS', key: 'F4' },
+    { id: 'projects', label: 'PROJECTS.BAS', key: 'F5' }
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
-    setIsMobileMenuOpen(false);
-  };
-
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-background/95 backdrop-blur-md border-b border-border/50' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="font-black text-xl gradient-text">
-            
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
-            {navItems.map((item) => (
-              <Button 
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold text-sm px-6 py-2 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                {item.label}
-              </Button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <Button
-            className="md:hidden bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold rounded-full p-2 transition-all duration-300 shadow-lg hover:shadow-xl"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b-2 border-primary">
+      <div className="flex items-center justify-between px-4 py-2 font-mono text-xs">
+        <div className="flex items-center gap-1">
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-4 py-1 border-2 transition-all ${
+                activeTab === tab.id
+                  ? 'bg-primary text-black border-primary'
+                  : 'bg-black text-primary border-primary/50 hover:border-primary'
+              }`}
+            >
+              [{tab.key}] {tab.label}
+            </button>
+          ))}
         </div>
+        
+        {/* <div className="hidden md:flex items-center gap-4">
+          <button
+            onClick={() => window.open('https://github.com', '_blank')}
+            className="text-primary hover:text-primary/80 transition-colors"
+          >
+            [F1] GITHUB
+          </button>
+          <button
+            onClick={() => window.open('https://www.linkedin.com/in/ghoshsoham71/', '_blank')}
+            className="text-primary hover:text-primary/80 transition-colors"
+          >
+            [F2] LINKEDIN
+          </button>
+          <button
+            onClick={() => window.open('mailto:ghoshsoham71@gmail.com')}
+            className="text-primary hover:text-primary/80 transition-colors"
+          >
+            [F3] EMAIL
+          </button>
+        </div> */}
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 animate-fade-in">
-            <div className="container mx-auto px-4 py-4 space-y-4">
-              {navItems.map((item) => (
-                <Button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href)}
-                  className="w-full bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white font-bold text-sm py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  {item.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-        )}
+        <div className="text-primary">
+          {time.toLocaleTimeString()}
+        </div>
       </div>
     </nav>
   );

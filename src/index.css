@@ -2,170 +2,185 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tech Portfolio Design System - Cyberpunk/Matrix inspired theme */
-
 @layer base {
   :root {
-    /* Dark-first theme with rich green-to-black gradients */
-    --background: 0 0% 7%; /* #121212 - Original dark background */
-    --foreground: 0 0% 100%; /* #ffffff - Original white text */
-
-    --card: 120 15% 8%; /* Dark green-black card background */
-    --card-foreground: 0 0% 100%;
-
-    --popover: 120 20% 6%; /* Even darker green-black for popovers */
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 122 100% 76%; /* #8aff8e - Bright green for components */
+    --background: 0 0% 0%;
+    --foreground: 120 100% 50%;
+    --primary: 120 100% 50%;
     --primary-foreground: 0 0% 0%;
-    --primary-glow: 122 100% 80%;
-
-    --secondary: 97 100% 19%; /* #1b6100 - Rich dark green */
-    --secondary-foreground: 122 100% 76%; /* Bright green text on dark green */
-    --secondary-glow: 97 100% 35%;
-
-    --accent: 127 85% 43%; /* #20c536 - Medium green accent */
-    --accent-foreground: 0 0% 100%;
-    --accent-glow: 127 85% 60%;
-
-    --muted: 120 10% 15%; /* Dark green-tinted muted */
-    --muted-foreground: 120 20% 70%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 120 15% 20%; /* Green-tinted borders */
-    --input: 120 20% 12%; /* Dark green input backgrounds */
-    --ring: 122 100% 76%; /* Bright green focus rings */
-
-    --radius: 0.75rem;
-
-    /* Rich green-to-black gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(122 100% 76%), hsl(127 85% 43%));
-    --gradient-dark: linear-gradient(180deg, hsl(120 15% 8%), hsl(0 0% 0%));
-    --gradient-card: linear-gradient(135deg, hsl(120 20% 6%), hsl(120 15% 8%));
-    --gradient-secondary: linear-gradient(135deg, hsl(97 100% 19%), hsl(120 50% 5%));
-    --gradient-accent: linear-gradient(135deg, hsl(127 85% 43%), hsl(122 100% 76%));
-    
-    /* Enhanced effects with green undertones */
-    --glow-primary: 0 0 40px hsl(122 100% 76% / 0.4);
-    --glow-secondary: 0 0 30px hsl(97 100% 19% / 0.3);
-    --glow-accent: 0 0 35px hsl(127 85% 43% / 0.35);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-    /* Sidebar with green undertones */
-    --sidebar-background: 120 15% 8%;
-    --sidebar-foreground: 122 100% 76%;
-    --sidebar-primary: 97 100% 19%;
-    --sidebar-primary-foreground: 122 100% 76%;
-    --sidebar-accent: 120 20% 12%;
-    --sidebar-accent-foreground: 127 85% 43%;
-    --sidebar-border: 120 15% 20%;
-    --sidebar-ring: 122 100% 76%;
+    --border: 120 100% 30%;
+    --ring: 120 100% 50%;
   }
 
-  .dark {
-    /* Keep original dark theme values intact */
-    --background: 0 0% 7%; /* #121212 */
-    --foreground: 0 0% 100%; /* #ffffff */
-
-    --card: 120 15% 8%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 120 20% 6%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 122 100% 76%; /* #8aff8e - Bright green components */
-    --primary-foreground: 0 0% 0%;
-    --primary-glow: 122 100% 80%;
-
-    --secondary: 97 100% 19%; /* #1b6100 - Rich dark green */
-    --secondary-foreground: 122 100% 76%;
-    --secondary-glow: 97 100% 35%;
-
-    --accent: 127 85% 43%; /* #20c536 - Medium green accent */
-    --accent-foreground: 0 0% 100%;
-    --accent-glow: 127 85% 60%;
-
-    --muted: 120 10% 15%;
-    --muted-foreground: 120 20% 70%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 120 15% 20%;
-    --input: 120 20% 12%;
-    --ring: 122 100% 76%;
-
-    /* Enhanced gradient system */
-    --gradient-primary: linear-gradient(135deg, hsl(122 100% 76%), hsl(127 85% 43%));
-    --gradient-dark: linear-gradient(180deg, hsl(120 15% 8%), hsl(0 0% 0%));
-    --gradient-card: linear-gradient(135deg, hsl(120 20% 6%), hsl(120 15% 8%));
-    --gradient-secondary: linear-gradient(135deg, hsl(97 100% 19%), hsl(120 50% 5%));
-    --gradient-accent: linear-gradient(135deg, hsl(127 85% 43%), hsl(122 100% 76%));
-    
-    /* Enhanced glow effects */
-    --glow-primary: 0 0 40px hsl(122 100% 76% / 0.4);
-    --glow-secondary: 0 0 30px hsl(97 100% 19% / 0.3);
-    --glow-accent: 0 0 35px hsl(127 85% 43% / 0.35);
-  }
-}
-
-@layer base {
   * {
-    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    overflow: hidden;
   }
 
   body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden;
+    @apply bg-black text-primary font-mono;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  ::selection {
+    background: rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000;
+    border-left: 1px solid rgba(0, 255, 0, 0.3);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.5);
+    border: 1px solid rgba(0, 255, 0, 0.8);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.7);
   }
 }
 
 @layer components {
-  .spotify-glow {
-    box-shadow: var(--glow-primary);
-    transition: var(--transition-smooth);
+  .terminal-window {
+    @apply bg-black border-2 border-primary;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3), inset 0 0 50px rgba(0, 255, 0, 0.05);
+    position: relative;
   }
 
-  .spotify-glow:hover {
-    box-shadow: 0 0 40px hsl(141 76% 48% / 0.5);
-    transform: translateY(-2px);
+  .terminal-window::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 255, 0, 0.02) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
   }
 
-  .gradient-text {
-    background: var(--gradient-primary);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  .terminal-window > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .terminal-header {
+    @apply text-primary text-xs sm:text-sm;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+  }
+
+  .terminal-button {
+    @apply bg-black border-2 border-primary text-primary transition-all;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+  }
+
+  .terminal-button:hover:not(:disabled) {
+    @apply bg-primary text-black;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  }
+
+  .terminal-button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .terminal-badge {
+    @apply px-2 py-1 border border-primary text-xs bg-black inline-block;
+    white-space: nowrap;
+  }
+
+  .terminal-scanlines {
+    position: relative;
+  }
+
+  .terminal-scanlines::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(0, 255, 0, 0.02) 50%
+    );
+    background-size: 100% 3px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: scanline 8s linear infinite;
+  }
+
+  .terminal-scanlines::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    pointer-events: none;
+    z-index: 9998;
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.97; }
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+.animate-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .terminal-window {
+    @apply text-xs;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .terminal-badge {
+    font-size: 0.65rem;
   }
 }
 
-body, html, #root {
-  font-family: 'Electrolize';
-}
-
-.audiowide {
-  font-family: 'Audiowide';
-}
-.iceland-regular {
-  font-family: "Iceland";
-}
-.heading-funnel {
-  font-family: 'Funnel Display';
-  font-weight: 800; 
-}
-.space-grotesk {
-  font-family: "Space Grotesk";
-  font-optical-sizing: auto;
+@media (max-height: 600px) {
+  .terminal-window {
+    font-size: 0.75rem;
+  }
 }
