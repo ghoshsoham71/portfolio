@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,11 +7,7 @@
 @layer base {
   :root {
     --background: 0 0% 0%;
-    --foreground: 120 100% 50%;
-    --primary: 120 100% 50%;
-    --primary-foreground: 0 0% 0%;
-    --border: 120 100% 30%;
-    --ring: 120 100% 50%;
+    --foreground: 0 0% 100%;
   }
 
   * {
@@ -18,169 +16,51 @@
     box-sizing: border-box;
   }
 
-  html, body, #root {
-    height: 100%;
-    overflow: hidden;
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-black text-primary font-mono;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    @apply antialiased;
   }
 
   ::selection {
-    background: rgba(0, 255, 0, 0.3);
-    color: #00ff00;
-  }
-
-  /* Custom scrollbar */
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: #000;
-    border-left: 1px solid rgba(0, 255, 0, 0.3);
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 0, 0.5);
-    border: 1px solid rgba(0, 255, 0, 0.8);
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 255, 0, 0.7);
+    background: rgba(220, 38, 38, 0.4);
+    color: #fff;
   }
 }
 
 @layer components {
-  .terminal-window {
-    @apply bg-black border-2 border-primary;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3), inset 0 0 50px rgba(0, 255, 0, 0.05);
-    position: relative;
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
   }
 
-  .terminal-window::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 50%,
-      rgba(0, 255, 0, 0.02) 50%
-    );
-    background-size: 100% 4px;
-    pointer-events: none;
-    z-index: 1;
+  ::-webkit-scrollbar-track {
+    background: transparent;
   }
 
-  .terminal-window > * {
-    position: relative;
-    z-index: 2;
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #dc2626, #991b1b);
+    border-radius: 3px;
   }
 
-  .terminal-header {
-    @apply text-primary text-xs sm:text-sm;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
-  }
-
-  .terminal-button {
-    @apply bg-black border-2 border-primary text-primary transition-all;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
-  }
-
-  .terminal-button:hover:not(:disabled) {
-    @apply bg-primary text-black;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-  }
-
-  .terminal-button:disabled {
-    @apply opacity-50 cursor-not-allowed;
-  }
-
-  .terminal-badge {
-    @apply px-2 py-1 border border-primary text-xs bg-black inline-block;
-    white-space: nowrap;
-  }
-
-  .terminal-scanlines {
-    position: relative;
-  }
-
-  .terminal-scanlines::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 50%,
-      rgba(0, 255, 0, 0.02) 50%
-    );
-    background-size: 100% 3px;
-    pointer-events: none;
-    z-index: 9999;
-    animation: scanline 8s linear infinite;
-  }
-
-  .terminal-scanlines::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      ellipse at center,
-      transparent 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-    pointer-events: none;
-    z-index: 9998;
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ef4444, #dc2626);
   }
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-@keyframes scanline {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100vh); }
-}
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.97; }
-}
-
-.animate-blink {
-  animation: blink 1s step-start infinite;
-}
-
-.animate-flicker {
-  animation: flicker 0.15s infinite;
-}
-
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .terminal-window {
-    @apply text-xs;
-  }
-  
-  .terminal-badge {
-    font-size: 0.65rem;
+@layer utilities {
+  /* Smooth transitions */
+  a, button {
+    @apply transition-all duration-300 ease-out;
   }
 }
 
-@media (max-height: 600px) {
-  .terminal-window {
-    font-size: 0.75rem;
-  }
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
 }
