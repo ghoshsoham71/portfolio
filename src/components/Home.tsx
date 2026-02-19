@@ -77,7 +77,7 @@ const Home = () => {
 
           {/* Bio */}
           <p className="text-sm sm:text-base text-gray-400 max-w-2xl leading-relaxed">
-            Building intelligent systems with AI/ML, DevOps automation, and scalable backend solutions. 
+            Building intelligent systems with generative AI. 
             Passionate about creating impactful technology that solves real-world problems.
           </p>
 

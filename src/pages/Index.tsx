@@ -11,7 +11,7 @@ const techStack = {
   "Databases": [
     { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
     { name: "Neo4j", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/neo4j/neo4j-original.svg" },
-    { name: "ChromaDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chromadb/chromadb-original.svg" },
+    { name: "ChromaDB", icon: "https://brandlogos.net/wp-content/uploads/2025/06/chroma-logo_brandlogos.net_1z1qk-512x339.png" },
     { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
   ],
   "Web Development": [
@@ -61,8 +61,11 @@ const tagIcons: Record<string, string> = {
   "Spotify API": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg",
   "PDF Generation": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe/adobe-original.svg",
   "Database": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-  "MCP": "https://python.langchain.com/img/langchain_stack.svg",
-  "Gemini": "https://www.gstatic.com/images/branding/product/2x/gen_ai_2025.svg",
+  "FastMCP": "https://fastmcp.me/img/fastmcp-logo-for-white-bg.svg",
+  "Gemini": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-gemini-icon.png",
+  "Supabase" : "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
+  "Genius API" : "data:image/png;base64,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",
+  "Tekore" : "https://pypi-camo.freetls.fastly.net/a67be5d605e18ddb7d386621b60f270a6367a066/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f66656c69782d68696c64656e2f74656b6f72652f6d61737465722f646f63732f7372632f6c6f676f5f736d616c6c2e706e67",
 };
 
 // Projects data
@@ -70,21 +73,21 @@ const projects = [
   {
     title: "Chord Analyzer",
     description: "A music analysis project that takes any Spotify song link and automatically generates a downloadable PDF chord sheet with chords perfectly aligned above the lyrics, using AI to detect chords. Supports chord transposition to any key.",
-    tags: ["JavaScript", "AI", "Spotify API", "PDF Generation"],
+    tags: ["Python", "CrewAI", "Multimodal Agents", "Tekore", "Genius API"],
     link: "https://github.com/ghoshsoham71/chord_analyzer",
     github: "https://github.com/ghoshsoham71/chord_analyzer"
   },
   {
     title: "DummyDB",
-    description: "A dummy database generator that creates fake data for testing and development purposes. Deployed at https://dummy-db-seven.vercel.app",
-    tags: ["Python", "FastAPI", "Database"],
+    description: "A dummy database generator that creates fake data for testing and development purposes. Engineered SDV-based synthetic data pipeline using HMASynthesizer and CTGAN with quality metrics.",
+    tags: ["Python", "FastAPI", "Supabase", "SDV", "HMASynthesizer", "CTGAN"],
     link: "https://github.com/ghoshsoham71/DummyDB",
     github: "https://github.com/ghoshsoham71/DummyDB"
   },
   {
     title: "Playlist MCP",
     description: "Python MCP server that uses Gemini to analyze music requests and automatically generate curated Spotify playlists through API integration.",
-    tags: ["Python", "MCP", "Gemini", "Spotify API", "AI"],
+    tags: ["Python", "FastMCP", "Gemini", "Tekore"],
     link: "https://github.com/ghoshsoham71/playlist-mcp",
     github: "https://github.com/ghoshsoham71/playlist-mcp"
   },
@@ -178,7 +181,7 @@ const Portfolio = () => {
     }
   }, [darkMode]);
 
-  const resumeUrl = "https://drive.google.com/file/d/1GHZovVKtB_KrSLoXc0j5ZZeRcWrC501M/view?usp=sharing";
+  const resumeUrl = "https://drive.google.com/file/d/18jiAJ62TfT7Pk8t6hEqy_8BOx3grsGUZ/view?usp=sharing";
   const githubUsername = "ghoshsoham71";
 
   return (
@@ -257,7 +260,7 @@ const Portfolio = () => {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 rounded-2xl text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>';
                   }}
                 />
               </div>
@@ -280,10 +283,10 @@ const Portfolio = () => {
                 Software Engineer at <span className="text-blue-600 font-medium">TCS-AI Cloud</span>
               </p>
               
-              <p className={`text-sm md:text-base ${darkMode ? 'text-gray-500' : 'text-gray-500'} mb-6 max-w-md`}>
-                Building intelligent systems with AI/ML, DevOps automation, and scalable backend solutions.
+              {/* <p className={`text-sm md:text-base ${darkMode ? 'text-gray-500' : 'text-gray-500'} mb-6 max-w-md`}>
+                Building intelligent systems with Generative AI.
               </p>
-              
+               */}
               <div className="flex items-center justify-center md:justify-start gap-3">
                 <a
                   href={resumeUrl}
@@ -315,16 +318,14 @@ const Portfolio = () => {
           
           <div className={`space-y-6 text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}>
             <p>
-              Hey there! I'm <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Soham</span> — a Software Engineer at <span className="text-blue-600 font-medium">TCS-AI Cloud</span> who loves building smart systems that actually solve problems.
+              Hey there! I'm <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Soham</span> — a Software Engineer at <span className="text-blue-600 font-medium">TCS-AI Cloud</span> who enjoys building intelligent systems that actually make a difference.
             </p>
             <p>
-              I work with <span className="text-red-600 font-medium">AI/ML</span>, 
-              <span className={darkMode ? 'text-gray-300' : 'text-gray-800'}> DevOps automation</span>, and 
-              <span className="text-blue-600">scalable backends</span> to build things that work at scale.
+              My work sits at the intersection of <span className="text-red-600 font-medium">Generative AI</span> 
+              <span className={darkMode ? 'text-gray-300' : 'text-gray-800'}> and scalable backend engineering,</span> 
+              <span className="text-blue-600"> </span> where I create solutions designed for real-world scale.
             </p>
-            <p>
-              Got my CS degree from <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>KIIT University</span> and have been shipping tech solutions for over a year now.
-            </p>
+
           </div>
         </div>
       </section>
