@@ -194,7 +194,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section - ramx.in style */}
-      <section className="min-h-[60vh] flex items-center justify-center relative overflow-hidden px-8 pt-6">
+      <section className="min-h-[60vh] flex items-center justify-center relative overflow-hidden px-8 md:pt-6 pt-12">
         {/* Background */}
         <div className={`absolute inset-0 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`} />
         
