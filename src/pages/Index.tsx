@@ -166,7 +166,7 @@ const Portfolio = () => {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'} text-gray-900 dark:text-white`}>
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? (darkMode ? 'bg-black/95' : 'bg-gray-100/95') : 'bg-transparent'} backdrop-blur-md border-b ${darkMode ? 'border-white/10' : 'border-gray-200'} py-4`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? (darkMode ? 'bg-black/95' : 'bg-gray-100/95') : 'bg-transparent'} backdrop-blur-md border-b ${darkMode ? 'border-white/10' : 'border-gray-200'} py-6`}>
         <div className="max-w-2xl mx-auto px-8 flex items-center justify-between">
           <a href="#" className="text-xl font-bold tracking-tight flex items-center gap-2">
             <span className={darkMode ? 'text-white' : 'text-gray-900'}>S</span>
@@ -194,7 +194,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section - ramx.in style */}
-      <section className="min-h-[60vh] flex items-center justify-center relative overflow-hidden px-8">
+      <section className="min-h-[60vh] flex items-center justify-center relative overflow-hidden px-8 pt-6">
         {/* Background */}
         <div className={`absolute inset-0 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`} />
         
@@ -291,7 +291,7 @@ const Portfolio = () => {
             <span className={darkMode ? 'text-white' : 'text-gray-900'}> Me</span>
           </h2>
           
-          <div className={`space-y-4 text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}>
+          <div className={`space-y-4 text-[15px] ${darkMode ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}>
             <p>
               Hey there! I'm <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Soham</span> — a Software Engineer at <span className="text-blue-600 font-medium">TCS-AI Cloud</span> who enjoys building intelligent systems that actually make a difference.
             </p>
@@ -582,7 +582,7 @@ const Portfolio = () => {
             <span className="text-[#5d9606]">Let's</span>
             <span className={darkMode ? 'text-white' : 'text-gray-900'}> Connect</span>
           </h2>
-          <p className={`text-lg mb-10 ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-md mx-auto`}>
+          <p className={`text-[13px] mb-10 ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-md mx-auto`}>
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
           
