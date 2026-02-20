@@ -21,7 +21,7 @@
   }
 
   body {
-    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     @apply antialiased;
   }
 
@@ -56,6 +56,34 @@
   /* Smooth transitions */
   a, button {
     @apply transition-all duration-300 ease-out;
+  }
+  
+  /* Diagonal wipe animation for theme transition - to dark */
+  @keyframes diagonal-wipe-to-dark {
+    0% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  
+  /* Diagonal wipe animation for theme transition - to light */
+  @keyframes diagonal-wipe-to-light {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100% {
+      clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    }
+  }
+  
+  .animate-diagonal-wipe-in-dark {
+    animation: diagonal-wipe-to-dark 300ms ease-in-out forwards;
+  }
+  
+  .animate-diagonal-wipe-in-light {
+    animation: diagonal-wipe-to-light 300ms ease-in-out forwards;
   }
 }
 

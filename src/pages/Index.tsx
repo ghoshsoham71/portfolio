@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, ExternalLink, FileText, BookOpen, Sun, Moon, Cpu, Globe, Server, Database, Code, Terminal, GitBranch } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, FileText, BookOpen, Sun, Moon } from "lucide-react";
 
 // Tech stack categorized with icons
 const techStack = {
@@ -118,27 +118,6 @@ const blogPosts = [
   },
 ];
 
-// GitHub contributions (simulated - replace with actual API in production)
-const generateContributions = () => {
-  const weeks = [];
-  for (let w = 0; w < 52; w++) {
-    const days = [];
-    for (let d = 0; d < 7; d++) {
-      const rand = Math.random();
-      let level = 0;
-      if (rand > 0.6) level = 1;
-      if (rand > 0.7) level = 2;
-      if (rand > 0.85) level = 3;
-      if (rand > 0.95) level = 4;
-      days.push(level);
-    }
-    weeks.push(days);
-  }
-  return weeks;
-};
-
-const contributions = generateContributions();
-
 const Portfolio = () => {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -215,7 +194,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section - ramx.in style */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-8">
+      <section className="min-h-[60vh] flex items-center justify-center relative overflow-hidden px-8">
         {/* Background */}
         <div className={`absolute inset-0 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`} />
         
@@ -252,15 +231,15 @@ const Portfolio = () => {
           <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* Profile Photo */}
             <div className="flex-shrink-0">
-              <div className={`w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden p-3 ${darkMode ? 'bg-white/10' : 'bg-gray-200'} flex items-center justify-center`}>
+              <div className={`w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden p-1 ${darkMode ? 'bg-white/10' : 'bg-gray-200'} flex items-center justify-center`}>
                 {/* Replace with your actual photo - add your photo to public folder and update the src */}
                 <img 
                   src="https://lh3.googleusercontent.com/d/1EXIHqLs3t16B4Z0WbCX5Y3KOR3-kG5w0=w800-h800" 
                   alt="Soham Ghosh"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-full"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 rounded-2xl text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 rounded-full text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>';
                   }}
                 />
               </div>
@@ -268,12 +247,8 @@ const Portfolio = () => {
             
             {/* Text Content */}
             <div className="flex-1 text-center md:text-left">
-              <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-gray-200 border border-gray-300'}`}>
-                <span className={`w-2 h-2 rounded-full ${darkMode ? 'bg-gradient-to-r from-red-500 to-blue-500' : 'bg-gradient-to-r from-red-600 to-blue-600'} animate-pulse`} />
-                <span className={`text-xs font-medium tracking-wider ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>AVAILABLE FOR WORK</span>
-              </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3" style={{ fontFamily: 'Caveat, cursive' }}>
                 <span className={darkMode ? 'text-white' : 'text-gray-900'}>
                   Soham Ghosh
                 </span>
@@ -309,14 +284,14 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className={`py-16 md:py-20 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
+      <section id="about" className={`py-4 md:py-6 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl font-bold mb-8">
-            <span className="bg-gradient-to-r from-red-600 to-blue-700 bg-clip-text text-transparent">About</span>
+            <span className="text-[#5d9606]">About</span>
             <span className={darkMode ? 'text-white' : 'text-gray-900'}> Me</span>
           </h2>
           
-          <div className={`space-y-6 text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}>
+          <div className={`space-y-4 text-lg ${darkMode ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}>
             <p>
               Hey there! I'm <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-900'}`}>Soham</span> — a Software Engineer at <span className="text-blue-600 font-medium">TCS-AI Cloud</span> who enjoys building intelligent systems that actually make a difference.
             </p>
@@ -331,14 +306,14 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="work experience" className={`py-16 md:py-20 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
+      <section id="work experience" className={`py-4 md:py-6 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
         <div className="max-w-2xl mx-auto">
-           <h2 className="text-4xl font-bold mb-8">
-             <span className="bg-gradient-to-r from-red-600 to-blue-700 bg-clip-text text-transparent">Work</span>
+           <h2 className="text-4xl font-bold mb-4">
+             <span className="text-[#5d9606]">Work</span>
              <span className={darkMode ? 'text-white' : 'text-gray-900'}> Experience</span>
            </h2>
           
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* TCS Experience */}
             <div className={`p-6 rounded-xl ${darkMode ? 'bg-white/5 border border-white/10' : 'bg-white border border-gray-200'}`}>
               <div className="flex items-start gap-4 mb-3">
@@ -443,12 +418,12 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className={`py-16 md:py-20 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
+      <section id="projects" className={`py-4 md:py-6 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
         <div className="max-w-2xl mx-auto">
-          <div className="flex items-end justify-between mb-12">
+          <div className="flex items-end justify-between mb-8">
             <div>
               <h2 className="text-4xl font-bold mb-2">
-                <span className="bg-gradient-to-r from-red-600 to-blue-700 bg-clip-text text-transparent">Selected</span>
+                <span className="text-[#5d9606]">Selected</span>
                 <span className={darkMode ? 'text-white' : 'text-gray-900'}> Projects</span>
               </h2>
               <p className={darkMode ? 'text-gray-500' : 'text-gray-500'}>Things I've built with code</p>
@@ -478,7 +453,7 @@ const Portfolio = () => {
                   </div>
                 </div>
                 
-                <p className={`text-sm mb-4 leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
+                <p className={`text-sm mb-3 leading-relaxed ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
@@ -504,11 +479,11 @@ const Portfolio = () => {
       </section>
 
       {/* Tech Stack Section */}
-      <section id="stack" className={`py-16 md:py-20 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
+      <section id="stack" className={`py-4 md:py-6 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
         <div className="max-w-2xl mx-auto">
-          <div className="mb-12">
+          <div className="mb-8">
             <h2 className="text-4xl font-bold mb-2">
-              <span className="bg-gradient-to-r from-red-600 to-blue-700 bg-clip-text text-transparent">Tech</span>
+              <span className="text-[#5d9606]">Tech</span>
               <span className={darkMode ? 'text-white' : 'text-gray-900'}> Stack</span>
             </h2>
             <p className={darkMode ? 'text-gray-500' : 'text-gray-500'}>Technologies I work with</p>
@@ -550,12 +525,12 @@ const Portfolio = () => {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className={`py-16 md:py-20 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
+      <section id="blog" className={`py-4 md:py-6 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
         <div className="max-w-2xl mx-auto">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-4xl font-bold mb-2">
-                <span className="bg-gradient-to-r from-red-600 to-blue-700 bg-clip-text text-transparent">Latest</span>
+                <span className="text-[#5d9606]">Latest</span>
                 <span className={darkMode ? 'text-white' : 'text-gray-900'}> Posts</span>
               </h2>
               <p className={darkMode ? 'text-gray-500' : 'text-gray-500'}>Writing about tech on Medium</p>
@@ -601,10 +576,10 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className={`py-16 md:py-20 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
+      <section id="contact" className={`py-4 md:py-6 px-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-100'}`}>
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-red-600 to-blue-700 bg-clip-text text-transparent">Let's</span>
+            <span className="text-[#5d9606]">Let's</span>
             <span className={darkMode ? 'text-white' : 'text-gray-900'}> Connect</span>
           </h2>
           <p className={`text-lg mb-10 ${darkMode ? 'text-gray-400' : 'text-gray-600'} max-w-md mx-auto`}>
@@ -613,9 +588,9 @@ const Portfolio = () => {
           
           <div className="flex items-center justify-center gap-4 flex-wrap">
             {[
-              { icon: Github, href: `https://github.com/${githubUsername}`, label: "GitHub" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/ghoshsoham71/", label: "LinkedIn" },
-              { icon: Mail, href: "https://mail.google.com/mail/?view=cm&fs=1&to=ghoshsoham71@gmail.com", label: "Email" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", href: `https://github.com/${githubUsername}`, label: "GitHub" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", href: "https://www.linkedin.com/in/ghoshsoham71/", label: "LinkedIn" },
+              { icon: "https://img.icons8.com/?size=96&id=P7UIlhbpWzZm&format=png", href: "https://mail.google.com/mail/?view=cm&fs=1&to=ghoshsoham71@gmail.com", label: "Email" },
             ].map((item, idx) => (
               <a
                 key={idx}
@@ -624,24 +599,15 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className={`p-3 rounded-lg transition-all duration-300 ${darkMode ? 'bg-white/10 border border-white/20 hover:bg-white/20' : 'bg-white border border-gray-200 hover:bg-gray-100'}`}
               >
-                <item.icon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                <img src={item.icon} alt={item.label} className={`w-5 h-5 ${darkMode ? 'invert' : ''}`} />
               </a>
             ))}
-            <a
-              href={resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-all duration-300 flex items-center gap-2"
-            >
-              <FileText className="w-4 h-4" />
-              Resume
-            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className={`py-8 px-8 border-t ${darkMode ? 'border-white/10 bg-black' : 'border-gray-200 bg-gray-100'}`}>
+      <footer className={`py-4 px-8 border-t ${darkMode ? 'border-white/10 bg-black' : 'border-gray-200 bg-gray-100'}`}>
         <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <span className={`text-sm font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>SG</span>
